@@ -24,3 +24,7 @@ else{
     code;
 }
 
+
+### 注意各种循环之间的联系和区别
+while; for;   do while
+ 
