@@ -1,10 +1,7 @@
-package dell.Day02_0805.Night;
-/*
-镂空金字塔
- */
-import java.util.Scanner;
+package dell.Day02_0805;
 
-public class Test01 {
+import java.util.Scanner;
+public class Test07 {
     public static void main(String[] args) {
         int i,j,k,n;  //i表示第几行初始值为1;  j表示每行空格的个数; n表示金字塔的层数从键盘中输入;  k表示每行星号的个数.
         //空格个数的规律：    金字塔总的层数-当前的行数
