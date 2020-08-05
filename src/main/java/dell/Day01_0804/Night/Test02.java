@@ -7,7 +7,7 @@ public class Test02 {
         double  h = 100.0;
         double total = 0;
         for (int i = 0; i < 10; i++){
-            total += h;
+            total = total + h + h/2;
             h = h/2;
         }
         System.out.println("小球经过十次弹跳一共经历"+total+"米");
