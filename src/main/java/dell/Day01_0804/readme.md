@@ -36,10 +36,18 @@ int a = 100； 最开始时a是100。
 
 打印 a;  这时a的值当然还是100了。
 
-
 ### 逻辑运算符
 $  ||  ！ 三种运算符的区别
+真值表
+    A                   B                          A&&B      A||B         !A           A^B          A&B         A|B
 
+   false               false                       false       false        true         false        false     false
+
+   true                false                       false       true          false        true         false      true
+
+   false               true                        false        true         true         true         false      true
+
+    true                true                       true         true          false       false         true      true
 
 ### 位运算符
 
