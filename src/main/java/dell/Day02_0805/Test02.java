@@ -8,6 +8,9 @@ import java.util.Scanner;
 
 public class Test02 {
     public static void main(String[] args) {
+
+
+
         int month ;   //你输入的月份序号
         int day;     //你输入的日期序号
         int dayFirst = 0;  //初始的时候天数
