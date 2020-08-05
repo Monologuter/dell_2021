@@ -40,7 +40,7 @@ public class Test02 {
             case 4:
                 dayFirst += 31;
             case 3:
-                dayFirst += 29;
+                dayFirst += 28;
             case 2:
                 dayFirst += 31;
             case 1:
