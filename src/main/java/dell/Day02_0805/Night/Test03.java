@@ -14,7 +14,6 @@ public class Test03 {
                 System.out.print(j+"*" + i + "=" + (i*j)+ "   ");
             }
             System.out.println();
-
         }
     }
 }

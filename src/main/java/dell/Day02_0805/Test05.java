@@ -3,7 +3,7 @@ package dell.Day02_0805;
 import java.util.Scanner;
 
 /*
-键盘中输入一个十进制的数  将此十进制的数
+键盘中输入一个十进制的数  将此十进制的数转化为二进制  其实就是字符串的拼接
  */
 public class Test05 {
     public static void main(String[] args) {
