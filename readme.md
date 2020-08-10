@@ -82,3 +82,26 @@ if   while  for   (do while )  (if else)
                 int[][] array = new intn[][]{{1,2,3},{3,5,6}}
             动态：
                 int[][] array = new int[2][3] 
+                
+                
+## 第二周：0810-0817
+    面向对象的学习内容
+        类和对象：
+            类的定义
+                属性 方法（功能）
+                属性：人的年龄 身高 性别
+                方法：人会走路 吃饭
+         封装 集成 多态 
+         其他的关键字
+            class
+            
+        方法的组成
+            返回值 基本数据类型  引用数据类型  或者  void
+            形参  形式参数
+            访问修饰符
+            public default protected private
+            
+            
+            
+        
+
