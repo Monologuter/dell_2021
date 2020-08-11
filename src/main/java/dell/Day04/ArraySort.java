@@ -23,7 +23,6 @@ public class ArraySort {
     public static  void Sort(int[]  arr) {
         //外层的循环的次数
         for (int i = 0; i < arr.length; i++) {
-
 //            每次循环之后下次需要村换的次数
             for (int j = 0; j < arr.length - 1 - i; j++) {
                 if (arr[j]>arr[j+1]){
@@ -69,5 +68,7 @@ public class ArraySort {
                 break;
             }
         }
+
+
     }
 }

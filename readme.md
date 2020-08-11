@@ -102,6 +102,11 @@ if   while  for   (do while )  (if else)
             public default protected private
             
             
+    方法的重载：(一同两不同)
+        要在同一个类下面
+        参数的个数不一样
+        参数的类型不一样
+            
             
         
 
