@@ -2,6 +2,47 @@
 java语言的开始  命名规范 运算符之类的 基本数据类型 
 ### 第二天 Day02   
 if   while  for   (do while )  (if else)
+       
+
+        输入：sout+回车键
+        输出：System.out.println();
+        
+        输入：psvm+回车键
+        输出：public static void main(String[] args) {}
+        
+        输入：fori + 回车键
+        输出：for (int i = 0; i < ; i++) {}
+        
+        快捷键：
+        
+        CTRL + D ：复制光标现在所在位置的这一行代码，并且复制到下一行
+        
+        CTRL + X ：删除当前光标所在行的代码
+        
+        SHIRT + ALT + 后方向键：光标所在行的代码下移一行
+        
+        SHIRT + ALT + 前方向键：光标所在行的代码上移一行
+        
+        Shift + Enter：开始新一行。光标所在行下空出一行，光标定位到新行位置
+        
+        Ctrl + A：选中所有代码
+        
+        CTRL + /:将选中的代码注释
+        
+        SHIRT + ALT + L：自动排版选中的代码，通常和Ctrl + A一起使用。
+        
+        Alt + Enter :导入包，自动修正
+        
+        Alt + insert：自动生成类中的get和set方法，toString方法，右键点击Generate也可以
+        
+        Ctrl + Z：撤销操作
+        
+        Ctrl + S：保存代码
+        
+        Ctrl + C：复制选中的代码
+        
+        Ctrl + V：粘贴选中的代码
+
 ### 第一周总结：
     环境的搭建  配置环境变量
     第一个Java程序  javac编译产生.class文件  
@@ -107,6 +148,18 @@ if   while  for   (do while )  (if else)
         参数的个数不一样
         参数的类型不一样
         练习：斐波那契数列 求数组中出现次数最多的元素 并返回该元素的值是多少  并且出现多少次
+    构造器 构造函数 构造方法
+        被称作方法：
+            特点：
+                可以有形参
+                名称必须与类名相同
+                没有返回值
+                不可以使用return
+                可以使用访问修饰符修饰 但是一般是不使用的
+                如果不显示声明构造函数，java会为类赋予一个默认的无惨构造函数
+                如果显示声明构造函数 java就不会赋予类无参构造函数
+                创建对象 初始化对象
+    
             
             
             
