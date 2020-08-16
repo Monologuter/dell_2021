@@ -1,7 +1,8 @@
 package dell.Day09.teacherTest.view;
 
-import com.wedu.project.model.User;
-import com.wedu.project.service.UserService;
+
+import dell.Day09.teacherTest.model.User;
+import dell.Day09.teacherTest.service.UserService;
 
 import java.util.Scanner;
 

@@ -1,6 +1,7 @@
 package dell.Day09.teacherTest.service;
 
-import com.wedu.project.model.User;
+
+import dell.Day09.teacherTest.model.User;
 
 /**
  * 处理用户功能逻辑（对用户的增、删、改、查）

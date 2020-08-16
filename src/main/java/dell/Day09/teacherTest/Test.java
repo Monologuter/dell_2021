@@ -1,7 +1,6 @@
 package dell.Day09.teacherTest;
 
-import com.wedu.project.model.User;
-import com.wedu.project.view.UserView;
+import dell.Day09.teacherTest.view.UserView;
 
 public class Test {
     public static void main(String[] args) {
