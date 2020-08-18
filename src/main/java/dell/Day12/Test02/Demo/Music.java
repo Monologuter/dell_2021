@@ -1,4 +1,4 @@
-package dell.Day12.Demo01.Test02.Demo;
+package dell.Day12.Test02.Demo;
 
 public class Music extends Media {
     private String author;

@@ -1,4 +1,4 @@
-package dell.Day12.Demo01.Polymorphism;
+package dell.Day12.Polymorphism;
 
 /**
  * @Author 马小姐
@@ -6,15 +6,15 @@ package dell.Day12.Demo01.Polymorphism;
  * @Version 1.0
  * @Description:
  */
-public class Chicken extends Animal {
+public class Cat extends Animal {
     @Override
     public void move() {
-        System.out.println("鸡在动");
+        System.out.println("猫在动");
     }
 
 
     @Override
     public void roar() {
-        System.out.println("鸡在叫");
+        System.out.println("猫在叫");
     }
 }
