@@ -12,10 +12,13 @@ public class Test {
         father.setName("陈亚");
         father.setAge(12);
         father.setWork("工地搬砖");
-        father.FatherInfo();
+        father.getInfo();
 
         Son son = new Son();
+        son.setName("陈诺");
+        son.setAge(10);
         son.setSchool("学校");
-        son.getSonInfo();
+        son.getInfo();
+        
     }
 }

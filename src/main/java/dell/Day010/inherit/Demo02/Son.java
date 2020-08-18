@@ -17,8 +17,8 @@ public class Son  extends Father {
         this.school = school;
     }
 
-    public void getSonInfo(){
-        System.out.println(super.getName()+super.getAge()+school);
+    @Override
+    public void getInfo() {
+        System.out.println(age+"岁的"+name+school);
     }
-
 }

@@ -7,9 +7,9 @@ package dell.Day010.inherit.Demo02;
  * @Description:
  */
 public class Father {
-    private String name;//姓名
-    private int age; //年龄
-    private String work; //工作方式
+    public String name;//姓名
+    public int age; //年龄
+    public String work; //工作方式
 
     public String getName() {
         return name;
@@ -35,7 +35,8 @@ public class Father {
         this.work = work;
     }
 
-    public void FatherInfo(){
+    public void getInfo(){
+
         System.out.println(age+"岁的"+name+work);
     }
 }

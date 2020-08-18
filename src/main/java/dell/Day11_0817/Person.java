@@ -7,11 +7,5 @@ package dell.Day11_0817;
  * @Description:
  */
 public class Person {
-    public int a;
-    public int b;
-
-    public void Cirl(int a , int b){
-
-        System.out.println("长方形的周长为："+2*(a*b));
-    }
+    
 }
