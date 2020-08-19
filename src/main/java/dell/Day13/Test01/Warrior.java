@@ -9,6 +9,7 @@ public class Warrior extends Role {
     }
 
     //重写父类的operate方法
+    @Override
     public void operate(Role role){
         //role是一个九头蛇
         if(role instanceof Monster){
