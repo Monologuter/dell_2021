@@ -38,5 +38,13 @@ public class Pander {
         return Double.compare(pander.getWeight(), getWeight()) == 0 &&
                 getSex() == pander.getSex();
     }
+
+    @Override
+    public String toString() {
+        return "熊猫【" +
+                "体重=" + weight +
+                ", 性别=" + sex +
+                '】';
+    }
 }
 

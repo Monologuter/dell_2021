@@ -19,6 +19,9 @@ public class Test {
 
         System.out.println(pander1.equals(pander));
         System.out.println(pander2.equals(pander));
+        System.out.println(pander);
+        System.out.println(pander1);
+        System.out.println(pander2);
 
 
         Teacher teacher = new Teacher();
