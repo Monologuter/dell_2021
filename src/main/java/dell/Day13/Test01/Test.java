@@ -7,7 +7,7 @@ package dell.Day13.Test01;
  * @Description:
  */
 public class Test {
-    public static void main(String[] args) {
+    public static void main(String[]  args) {
 
         Role warrior = new Warrior(150);
         Role monster = new Monster(200);
