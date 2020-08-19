@@ -9,20 +9,27 @@ package dell.Day13.Test01;
 public class Test {
     public static void main(String[] args) {
 
-        Role warrior = new Warrior("战士",100);
-        Role minister = new Minister("牧师",100);
-        Role monster = new Monster("怪物",100);
+        Role warrior = new Warrior(150);
+        Role monster = new Monster(200);
+        Role minister = new Minister(100);
 
-        warrior.operate(minister);
+
+        //战士遇到了九头蛇
         warrior.operate(monster);
-        System.out.println("============================");
+
+        //战士遇到了牧师
+        warrior.operate(minister);
+
+        //牧师遇到了九头蛇
         minister.operate(monster);
+
+        //牧师遇到了战士
         minister.operate(warrior);
-        System.out.println("============================");
-        monster.operate(minister);
+
+        //九头蛇遇到了战士
         monster.operate(warrior);
-
-
+        //九头蛇遇到了牧师
+        monster.operate(minister);
 
     }
 }

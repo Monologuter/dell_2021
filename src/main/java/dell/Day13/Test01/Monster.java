@@ -7,25 +7,32 @@ package dell.Day13.Test01;
  * @Description:九头蛇
  */
 public class Monster extends Role {
-    private  String name;
 
-
-    public Monster(String name , int healthy) {
-        super(healthy);
-        this.name = name;
+    //初始化九头蛇的生命值
+    public Monster(int health){
+        super.setHealth(health);
     }
 
-
+    //重写父类方法
     @Override
-    public void operate(Role role) {
+    public void operate(Role role){
         if(role instanceof Warrior){
-            role.healthy -= 15;
-            System.out.println("对战士进行攻击,战士生命值减15"+"\n"+"战士生命值为："+healthy);
+            System.out.println("九头蛇当前血量为："+ this.getHealth());
+            System.out.println("九头蛇对战士造成攻击");
 
-        }else if(role instanceof  Minister){
-            role.healthy -= 20;
-            System.out.println("对牧师进行攻击,牧师生命值减小20"+"\n"+"牧师生命值为："+healthy);
+            //战士受到攻击
+            role.setHealth(role.getHealth() - 15);
+
+            System.out.println("战士当前血量为：" + role.getHealth());
+            System.out.println("====================");
+        }else if(role instanceof Minister){
+            System.out.println("九头蛇当前血量为："+ this.getHealth());
+            System.out.println("牧师("+role.getHealth()+")闯入九头蛇领地，受到攻击");
+
+            //牧师受到攻击
+            role.setHealth(role.getHealth()-20);
+
+            System.out.println("牧师血量为:" + role.getHealth());
         }
-
     }
 }

@@ -1,28 +1,35 @@
 package dell.Day13.Test01;
 
-/**
- * @Author 马小姐
- * @Date 2020/8/19 8:59
- * @Version 1.0
- * @Description:战士类
- */
-public class Warrior extends  Role{
-    private String name;
+public class Warrior extends Role {
 
-    public Warrior(String name , int healthy) {
-        super(healthy);
-        this.name = name;
+
+    //设置战士的初始化生命值
+    public Warrior(int health){
+        super.setHealth(health);
     }
 
-    @Override
-    public void operate(Role role) {
-        if (role instanceof Monster){
-            role.healthy -= 10;
-            System.out.println("开始攻击九头蛇,九头蛇生命值减10"+"\n"+"九头蛇生命值为："+healthy);
-        }else if(role instanceof  Minister){
-            role.healthy+=10;
-            System.out.println("牧师为战士加十点生命值！"+"\n"+"战士生命值为："+healthy);
-        }
+    //重写父类的operate方法
+    public void operate(Role role){
+        //role是一个九头蛇
+        if(role instanceof Monster){
+            System.out.println("战士("+ this.getHealth() +")攻击了九头蛇");
+            System.out.println("战士的血量为："+this.getHealth());
+            System.out.println("九头蛇未被攻击前的血量为:" + role.getHealth());
 
+            //执行攻击行为
+            int monsterHealth = role.getHealth();//获取九头蛇血量
+            monsterHealth -= 10;//九头蛇血量减10
+            role.setHealth(monsterHealth);//设置九头蛇的新血量
+//            role.setHealth(role.getHealth()-10);
+
+
+
+            System.out.println("九头蛇的血量为:" + role.getHealth());
+            System.out.println("====================");
+        }else if(role instanceof Minister){
+            this.setHealth(this.getHealth()+10);//设置战士的血量+10
+            System.out.println("牧师使用回复术为战士加血，现在战士的血量为:"+ this.getHealth());
+            System.out.println("====================");
+        }
     }
 }

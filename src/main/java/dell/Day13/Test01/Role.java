@@ -1,31 +1,28 @@
 package dell.Day13.Test01;
 
-/**
- * @Author 马小姐
- * @Date 2020/8/19 8:57
- * @Version 1.0
- * @Description:
- */
+/*
+ * Role类
+ *
+ * 属性：
+ *   私有属性 生命值health
+ *   方法：operate(Role role)
+ *
+ * */
 public class Role {
-    public   int healthy;
 
+    //生命值
+    private int health;
 
-    public Role() {
+    //方法
+    public void  operate(Role role){
+        System.out.println("当前角色的生命值是:" + this.getHealth());
     }
 
-    public Role(int healthy) {
-        this.healthy = healthy;
+    public void setHealth(int health){
+        this.health = health;
     }
 
-    public int getHealthy() {
-        return healthy;
-    }
-
-    public void setHealthy(int healthy) {
-        this.healthy = healthy;
-    }
-
-    public void operate(Role role){
-        System.out.println("当前生命值为："+healthy);
+    public int getHealth(){
+        return this.health;
     }
 }
