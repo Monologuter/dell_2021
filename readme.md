@@ -204,7 +204,7 @@ if   while  for   (do while )  (if else)
         单例类只能有一个实例
         单例类必须自己创建自己的唯一的实例 
         单例类必须给其他对象提供这个实例
-        `public class Singleton {
+        public class Singleton {
              private static Singleton singleton = new Singleton();
          
              private  double i ;
@@ -223,7 +223,7 @@ if   while  for   (do while )  (if else)
                  System.out.println(s1 == s2);
              }
          }
-`
+
 
         
         
