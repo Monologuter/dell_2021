@@ -187,10 +187,46 @@ if   while  for   (do while )  (if else)
             如果父类方法返回值是void 那么子类方法的返回值也一定是void
             如果父类方法返回值是基本数据类型  那么子类方法返回值类型要和父类方法返回值类型一致
             如果父类方法返回值类型为引用数据类型   那么子类方法的返回值类型只能是该引用数据类型及其子类
-            == 操作符可以比较基本数据类型以及引用数据类型  
+                操作符可以比较基本数据类型以及引用数据类型  
                 比较基本数据类型的时候比较的是数据的值
                 比较引用数据类型的时候比较的是地址值
-                
+    包装类：
+        八个基本数据类型的包装类        
+        基本数据类型和包装类之间的转换  拆箱和装箱 
+    
+    static关键字
+        static关键字可以修饰属性 方法  代码块  内部类
+        被static关键字修饰的属性方法就被称为类属性（类变量）和类方法
+        内存分析
+        
+        
+    单例模式：(java开发的常见的23中设计模式)
+        单例类只能有一个实例
+        单例类必须自己创建自己的唯一的实例 
+        单例类必须给其他对象提供这个实例
+        `public class Singleton {
+             private static Singleton singleton = new Singleton();
+         
+             private  double i ;
+             private Singleton(){
+                 i= Math.random();
+             }
+         
+             public static Singleton getInstance(){
+                 return singleton;
+             }
+         
+             public static void main(String[] args) {
+                 Singleton s1 = Singleton.getInstance();
+                 Singleton s2 = Singleton.getInstance();
+         
+                 System.out.println(s1 == s2);
+             }
+         }
+`
+
+        
+        
                 
             
             
