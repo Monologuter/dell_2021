@@ -17,5 +17,7 @@ public class Singleton {
         Singleton s2 = Singleton.getInstance();
 
         System.out.println(s1 == s2);
+        System.out.println(s1.i);
+        System.out.println(s2.i);
     }
 }
