@@ -228,7 +228,10 @@ if   while  for   (do while )  (if else)
     接口   常量    继承和实现可以同时存在  要区分之间的区别
     内部类：
            0、内部类的分类
-                成员内部类  局部内部类（方法内  代码快内  构造器内）
+                成员内部类（一方面作为外部类的成员   另一方面作为一个类）
+                    作为一个类的时候   可以定义属性  方法  构造器之类的   
+                
+                局部内部类（方法内  代码快内  构造器内）
                 `public class InnerClassTest {
                  
                  }
@@ -236,13 +239,23 @@ if   while  for   (do while )  (if else)
                  class Person{
                      //成员内部类(静态  非静态)
                       static  class Dog{
-                 
-                 
-                     }
+                      String name;
+                      int  age;
+                      public void show(){
+                        sout("卡拉是一条狗 ")
+                     
+                      
+                      }
+           
+                   }
                  
                      class bird{
-                          //成员内部类 非静态的
-                 
+                          //成员内部类 非静态的 
+                          String name;
+                          public void sing(){
+                          sout("我是一只小小鸟")
+                          
+                          }
                      }
                  
                  
@@ -276,7 +289,8 @@ if   while  for   (do while )  (if else)
            2、不过要注意的是，当成员内部类拥有和外部类同名的成员变量或者方法时，会发生隐藏现象，即默认情况下访问的是成员内部类的成员。如果要访问外部类的同名成员，需要以下面的形式进行访问：
                 外部类.this.成员变量
                 外部类.this.成员方法
-            虽然成员内部类可以无条件地访问外部类的成员，而外部类想访问成员内部类的成员却不是这么随心所欲了。在外部类中如果要访问成员内部类的成员，必须先创建一个成员内部类的对象，再通过指向这个对象的引用来访问：    
+            虽然成员内部类可以无条件地访问外部类的成员，而外部类想访问成员内部类的成员却不是这么随心所欲了。在外部类中如果要访问成员内部类的成员，必须先创建一个成员内部类的对象，再通过指向这个对象的引用来访问
+                            
             `public class Circle_02 {
              
                  private double radius = 0;
@@ -299,6 +313,130 @@ if   while  for   (do while )  (if else)
              
              }`
              
+             
+             
+             
+           3、如何使用成员内部类？
+                               间接方式：
+                                   在外部类的方法中  使用内部类  然后main只是调用外部类的方法
+                               直接方式：
+                                   外部类名称.内部类名称  对象名   =  new 外部类名称().new 内部类名称();
+                                       eg:  外部类为Person  内部类为Heart   调用内部类中的方法beat()
+                                       则应该为： Person.Heart  heart  =  new  Person().new  Heart();
+                                       heart.beat();
+           4、解决外部类和内部类的重名问题：
+                  访问外部类的成员变量的格式是：  外部类名称.this.外部类成员变量名
+                      
+                               `public class Outer {
+                                    int num = 10;
+                                
+                                    public class  inner{
+                                        int num = 20;
+                                        public void showNum(){
+                                            int num  = 30;
+                                            System.out.println(num);  //30
+                                            System.out.println(this.num);  //20 
+                                            System.out.println(Outer.this.num);  //10
+                                        }
+                                    }
+                                
+                                    public static void main(String[] args) {
+                                        Outer.inner show = new Outer().new inner();
+                                        show.showNum();
+                                
+                                    }
+                                }`
+                                    
+             
+            5、访问局部内部类的属性
+                `public class Outer02 {
+                 
+                     public static void main(String[] args) {
+                         Outer02 outer02 = new Outer02();
+                         outer02.methodOuter();
+                     }
+                     
+                     public void  methodOuter(){
+                 
+                         class  Inner {
+                             int num = 10;
+                             public void methodInner(){
+                                 System.out.println(num);
+                             }
+                 
+                         }
+                 
+                         Inner inner = new Inner();
+                         inner.methodInner();
+                     }
+                 }`
+            
+           6、局部内部类  如果希望访问所在方法的局部变量 那么这个局部变量必须是有效的final
+                    从java8开始 只要局部变量的值事实上不变  那么final关键字是可以省略的   
+                    原因：
+                        new出来的对象是在堆内存中的
+                        局部变量是跟着方法走得   在栈内存中 
+                        方法运行结束之后就会出栈 局部变量就会立刻消失    
+                        new出来的对象会在堆内存中持续存在  直到垃圾回收
+                        
+                        
+           7、匿名内部类
+                定义：
+                    接口名称  对象名 = new   接口名称(){
+                           //覆盖重写所有的抽象方法
+                     };
+                     
+                MyInterface接口：
+                    `public interface MyInterface {
+                         void method();
+                     }`   
+                     
+                     
+                MyInterfaceImpl实现类：
+                    `public class MyInterfaceImpl  implements  MyInterface{
+                         @Override
+                         public void method() {
+                             System.out.println("覆盖重写了方法");
+                         }
+                     }
+                     
+                
+                DemoMain测试类：
+                    `public class DemoMain {
+                         public static void main(String[] args) {
+                     //        MyInterfaceImpl impl = new MyInterfaceImpl();
+                     //        impl.method();
+                     //
+                     //        //多态
+                     //        MyInterface obj = new MyInterfaceImpl();
+                     //        obj.method();
+                     
+                             MyInterface obj2 = new MyInterface() {
+                                 @Override
+                                 public void method() {
+                                     System.out.println("匿名内部类实现了方法 ");
+                                 }
+                             };
+                             obj2.method();
+                         }
+                     }
+                     
+                     new代表创建对象的动作
+                     接口名称就是表示匿名内部类需要实现哪个接口
+                     {......};   这才是匿名内部类的内容
+                     
+                     注意事项：
+                        匿名内部类有且只能使用一次
+                     
+                     
+           
+                         
+                     
+                  
+                     
+                       
+            
+            
              
              
                 
