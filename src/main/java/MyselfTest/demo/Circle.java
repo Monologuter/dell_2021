@@ -4,6 +4,10 @@ public class Circle {
 
     private  int redius;
 
+    public Circle() {
+
+    }
+
     public int getRedius() {
         return redius;
     }

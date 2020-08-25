@@ -224,9 +224,83 @@ if   while  for   (do while )  (if else)
              }
          }
 
-
-        
-        
+### 第四周：
+    接口   常量    继承和实现可以同时存在  要区分之间的区别
+    内部类：
+           0、内部类的分类
+                成员内部类  局部内部类（方法内  代码快内  构造器内）
+                `public class InnerClassTest {
+                 
+                 }
+                 
+                 class Person{
+                     //成员内部类(静态  非静态)
+                      static  class Dog{
+                 
+                 
+                     }
+                 
+                     class bird{
+                          //成员内部类 非静态的
+                 
+                     }
+                 
+                 
+                 
+                 
+                     public void meth() {
+                         //局部内部类  方法内
+                         class AA{
+                 
+                         }
+                     }
+                 
+                     {
+                         //局部内部类  代码块内
+                         class BB{
+                 
+                         }
+                 
+                     }
+                 
+                 
+                     public Person() {
+                         //局部内部类  构造器内
+                         class CC{ 
+                 
+                         }
+                     }
+                 }`
+                
+           1、在Java中，可以将一个类定义在另一个类里面或者一个方法里面，这样的类称为内部类。广泛意义上的内部类一般来说包括这四种：成员内部类、局部内部类、匿名内部类和静态内部类。下面就先来了解一下这四种内部类的用法
+           2、不过要注意的是，当成员内部类拥有和外部类同名的成员变量或者方法时，会发生隐藏现象，即默认情况下访问的是成员内部类的成员。如果要访问外部类的同名成员，需要以下面的形式进行访问：
+                外部类.this.成员变量
+                外部类.this.成员方法
+            虽然成员内部类可以无条件地访问外部类的成员，而外部类想访问成员内部类的成员却不是这么随心所欲了。在外部类中如果要访问成员内部类的成员，必须先创建一个成员内部类的对象，再通过指向这个对象的引用来访问：    
+            `public class Circle_02 {
+             
+                 private double radius = 0;
+             
+                 public void Circle(double radius) {
+                     this.radius = radius;
+                     
+                     Draw draw = new Draw();
+                     draw.drawSahpe();
+                     //必须先创建成员内部类的对象，再进行访问
+                 }
+             
+             
+             
+                 class Draw {     //内部类
+                     public void drawSahpe() {
+                         System.out.println(radius);  //外部类的private成员
+                     }
+                 }
+             
+             }`
+             
+             
+             
                 
             
             
