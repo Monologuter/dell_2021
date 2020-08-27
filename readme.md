@@ -399,7 +399,7 @@ if   while  for   (do while )  (if else)
                              System.out.println("覆盖重写了方法");
                          }
                      }
-                     
+                    h
                 
                 DemoMain测试类：
                     `public class DemoMain {
@@ -431,11 +431,23 @@ if   while  for   (do while )  (if else)
                      
            
                          
-                     
-                  
-                     
-                       
-            
+    异常：
+        异常的体系结构
+            java.lang.Throwable
+                 |                  
+                 |----java.lang.Error:  一般不编写针对性的代码进行处理 
+                 |----java.lang.Exception: 可以进行异常的处理
+                    ｜ 
+                    ｜----编译时异常（checked）                  
+                    ｜      ｜----IOException（FileNotFoundException）
+                    ｜      ｜                    
+                    ｜      ｜----ClassNotFoundException
+                    ｜
+                    ｜
+                    ｜ 
+                    ｜
+                    ｜----运行时异常（unchecked）  （NUllPointException  ArrayIndexOutOfBoundsException  ClassCastException  NumFormaException  InputMismatchException）
+                    ｜
             
              
              
