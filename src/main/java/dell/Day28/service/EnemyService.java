@@ -24,24 +24,30 @@ public class EnemyService {
         System.out.println("请选择你需要挑战的敌人：");
         Scanner scanner = new Scanner(System.in);
 
+
         while (true) {
-            int e  = scanner.nextInt();
-            if (e == 1) {
-                System.out.println("你的敌人为："+enemy[0].getEnemyName());
-                enemy1=enemy[0];
-                break;
-            }
-            else if (e == 2) {
-                System.out.println("您遭遇了敌人："+enemy[1].getEnemyName());
-                enemy1=enemy[1];
-                break;
-            }
-            else if (e == 3) {
-                System.out.println("你的敌人为："+enemy[2].getEnemyName());
-                enemy1=enemy[2];
-                break;
-            }else{
-                System.out.println("请重新选择你的敌人：");
+            String str  = scanner.nextLine();
+            try {
+                int num  = Integer.parseInt(str);
+                if (num == 1) {
+                    System.out.println("你的敌人为："+enemy[0].getEnemyName());
+                    enemy1=enemy[0];
+                    break;
+                }
+                else if (num == 2) {
+                    System.out.println("您遭遇了敌人："+enemy[1].getEnemyName());
+                    enemy1=enemy[1];
+                    break;
+                }
+                else if (num == 3) {
+                    System.out.println("你的敌人为："+enemy[2].getEnemyName());
+                    enemy1=enemy[2];
+                    break;
+                }else{
+                    System.out.println("请重新选择你的敌人：");
+                }
+            }catch (NumberFormatException e) {
+                System.out.println("请重新输入数字进行选择");
             }
         }
         return enemy1;

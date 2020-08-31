@@ -51,9 +51,9 @@ public class NpcMasterService extends AbstractNpcService {
                     System.out.println("抱歉，你的金币不够，快去获得吧");
                 } else {
 
-                    System.out.println("需要学习该项技能吗？Y/N");
+                    System.out.println("需要学习该项技能吗？请输入Y/y开始学习!");
                     String h = scanner.next();
-                    if (h.charAt(0) == 'Y') {
+                    if (h.charAt(0) == 'Y' || h.charAt(0)== 'y') {
                         player.setMoney(player.getMoney() - 4000);
                         System.out.println("当前金钱为：" + player.getMoney());
                         List<Skill> playSkill = player.getSkills();
@@ -74,9 +74,9 @@ public class NpcMasterService extends AbstractNpcService {
                 if (player.getMoney() < 10000) {
                     System.out.println("抱歉，你的金币不够，快去获得吧");
                 } else {
-                    System.out.println("需要学习该项技能吗？Y/N");
+                    System.out.println("需要学习该项技能吗？请输入Y/y开始学习!");
                     String i = scanner.next();
-                    if (i.charAt(0) == 'Y') {
+                    if (i.charAt(0) == 'Y' || i.charAt(0)== 'y') {
                         player.setMoney(player.getMoney() - 10000);
                         System.out.println("当前金钱为：" + player.getMoney());
                         List<Skill> playSkill = player.getSkills();
@@ -85,7 +85,7 @@ public class NpcMasterService extends AbstractNpcService {
                         System.out.println("你变得更加强大了");
 
                     } else {
-                        System.out.println("请量力而行");
+                        System.out.println("不想学就算了吧!");
                     }
                 }
             }
@@ -95,7 +95,5 @@ public class NpcMasterService extends AbstractNpcService {
             System.out.println((a + 1) + "." + player.getSkills().get(a).getSkillName());
         }
     }
-
-
 }
 

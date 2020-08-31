@@ -23,9 +23,9 @@ public class NpcDoctorService extends AbstractNpcService {
      */
     @Override
     public void helpPlayer(Player player) {
-        System.out.println("治疗一次需花费50金钱");
+        System.out.println("治疗一次需花费100金钱");
         System.out.println("当前生命值为"+player.getHp()+"当前蓝量为"+player.getMana());
-        if (player.getHp() ==player.getMaxHp()&&player.getMana() ==player.getMaxMana()){
+        if (player.getHp() ==player.getMaxHp() && player.getMana() ==player.getMaxMana()){
             System.out.println("你现在很健康不需要治疗");
         }else {
             if (player.getMoney() >= 100) {

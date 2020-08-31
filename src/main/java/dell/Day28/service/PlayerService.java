@@ -12,7 +12,7 @@ public class PlayerService {
      *
      * @return 返回实例化的player对象
      */
-    public static Player initPlayer() {
+    public static Player initPlayer()    {
 
         // 1.输出欢迎信息
         System.out.println("*****************************************");
@@ -25,10 +25,14 @@ public class PlayerService {
         String name = scanner.next();
 
         // 3.调用构造函数初始化角色
-        Player player = new Player(name,1,0,100000,5,5,50,100,50,50);
+
+        Player player = new Player(name,1,0,100000,30,5,100,300,50,200);
 
         // 4.输出初始化结果信息
         System.out.println("角色初始化完毕,您的附魔之路即将开启！");
+//        System.out.println("当前属性为：姓名："+player.getPlayerName()+",等级："+player.getLevel()+"，经验值："+player.getExp()+
+//                ",金钱："+player.getMoney()+",攻击力："+player.getAttack()+"，防御力："+player.getDefense()+"，血量值："+
+//                player.getHp()+"，最大血量值："+player.getMaxHp()+"，魔力值："+player.getMana()+",最大魔力值："+player.getMaxMana());
 
         return player;
     }
@@ -42,6 +46,8 @@ public class PlayerService {
      *            挑战的敌人
      */
     public static void fight(Player player, Enemy enemy) {
+        //定义一个参数作为血量  每次打死怪兽的时候再次更新怪兽的血量为初始值
+        int emeryHp = enemy.getHp();
 
         // 1.使用do-while循环，持续进行战斗，到有一方血量扣完为止
 
@@ -50,14 +56,22 @@ public class PlayerService {
             //action(player);//玩家攻击力
             int f = action(player);
             if (f == 1) {
+                if (attack(player) - enemy.getDefense()<=0){
+                    System.out.println("你对怪兽"+enemy.getEnemyName()+"没有破防！");
+                    System.out.println(enemy.getEnemyName() + "剩余血量为" + emeryHp);
+                }else {
+                    emeryHp = (emeryHp - (attack(player) - enemy.getDefense()));
+                    System.out.println("你对" + enemy.getEnemyName() + "造成了" + (attack(player) - enemy.getDefense()) + "伤害");
+                }
 
-                enemy.setHp(enemy.getHp() - (attack(player) - enemy.getDefense()));
-                System.out.println("你对" + enemy.getEnemyName() + "造成了" + (attack(player) - enemy.getDefense()) + "伤害");
 
-                if (enemy.getHp() <= 0) {
+
+
+                //当血量小于0的时候
+                if (emeryHp <= 0) {
                     System.out.println(enemy.getEnemyName() + "剩余血量为0");
                 } else {
-                    System.out.println(enemy.getEnemyName() + "剩余血量为" + enemy.getHp());
+                    System.out.println(enemy.getEnemyName() + "剩余血量为" + emeryHp);
                 }
 
                 if (EnemyService.action(enemy) - player.getDefense()<=0){
@@ -72,7 +86,7 @@ public class PlayerService {
                         System.out.println("你剩余血量为" + player.getHp() + "，剩余蓝量为" + player.getMana());
                     }
                 }
-               // break;
+
             } else if (f == 2) {
 //              技能攻击
                 if (player.getSkills().size() == 0) {
@@ -96,15 +110,15 @@ public class PlayerService {
                                 System.out.println("你的蓝量为：" + player.getMana() + "，技能释放所需蓝量为：" + player.getSkills().get(j - 1).getMana() + "，你并没有足够的蓝量释放技能。");
                             } else {
 
-                                enemy.setHp(enemy.getHp() - (attack(player) * player.getSkills().get(j - 1).getAttackAddition()));
+                                emeryHp = (emeryHp - (attack(player) * player.getSkills().get(j - 1).getAttackAddition()));
                                 player.setMana(player.getMana()-player.getSkills().get(j - 1).getMana());
 
                                 System.out.println("你对" + enemy.getEnemyName() + "造成了" + (attack(player) * player.getSkills().get(j - 1).getAttackAddition()) + "伤害");
 
-                                if (enemy.getHp() <= 0) {
+                                if (emeryHp <= 0) {
                                     System.out.println(enemy.getEnemyName() + "剩余血量为0");
                                 } else {
-                                    System.out.println(enemy.getEnemyName() + "剩余血量为" + enemy.getHp());
+                                    System.out.println(enemy.getEnemyName() + "剩余血量为" + emeryHp);
                                 }
 
                                 if (EnemyService.action(enemy) - player.getDefense() <= 0) {
@@ -129,15 +143,15 @@ public class PlayerService {
                                 System.out.println("你的蓝量为：" + player.getMana() + "，技能释放所需蓝量为：" + player.getSkills().get(j - 1).getMana() + "，你并没有足够的蓝量释放技能。");
                             } else {
 
-                                enemy.setHp(enemy.getHp() - (attack(player) * player.getSkills().get(j - 1).getAttackAddition()));
+                                emeryHp = (emeryHp - (attack(player) * player.getSkills().get(j - 1).getAttackAddition()));
                                 player.setMana(player.getMana()-player.getSkills().get(j - 1).getMana());
 
                                 System.out.println("你对" + enemy.getEnemyName() + "造成了" + (attack(player) * player.getSkills().get(j - 1).getAttackAddition()) + "伤害");
 
-                                if (enemy.getHp() <= 0) {
+                                if (emeryHp <= 0) {
                                     System.out.println(enemy.getEnemyName() + "剩余血量为0");
                                 } else {
-                                    System.out.println(enemy.getEnemyName() + "剩余血量为" + enemy.getHp());
+                                    System.out.println(enemy.getEnemyName() + "剩余血量为" + emeryHp);
                                 }
 
                                 if (EnemyService.action(enemy) - player.getDefense() <= 0) {
@@ -162,7 +176,7 @@ public class PlayerService {
             }else{
                 System.out.println("请重新选择：");
             }
-            } while (player.getHp() > 0 && enemy.getHp() > 0) ;
+            } while (player.getHp() > 0 && emeryHp > 0) ;
 
             // 2.玩家选择行为
 
@@ -176,7 +190,7 @@ public class PlayerService {
             System.exit(0);
         }
 
-        if (enemy.getHp() <= 0){
+        if (emeryHp <= 0){
             victory(player,enemy);
 
         }
@@ -222,7 +236,7 @@ public class PlayerService {
         System.out.println("恭喜你打败了"+enemy.getEnemyName());
         levelUp(player,enemy);
         System.out.println("当前属性为：姓名："+player.getPlayerName()+",等级："+player.getLevel()+"，经验值："+player.getExp()+
-                "金钱："+player.getMoney()+",攻击力："+player.getAttack()+"，防御力："+player.getDefense()+"，血量值："+
+                ",金钱："+player.getMoney()+",攻击力："+player.getAttack()+"，防御力："+player.getDefense()+"，血量值："+
                 player.getHp()+"，最大血量值："+player.getMaxHp()+"，魔力值："+player.getMana()+",最大魔力值："+player.getMaxMana());
     }
     /**
@@ -235,7 +249,7 @@ public class PlayerService {
 //        等级经验升级
         player.setExp(player.getExp()+enemy.getExp());
         if (player.getExp()>=100){
-            player.setExp(player.getExp()+1);
+            player.setLevel(player.getLevel()+1);
             player.setExp(0);
             player.setMoney(player.getMoney()+enemy.getMoney());
             player.setAttack(player.getAttack()+player.getProfession().getAttackGrow());
@@ -244,9 +258,13 @@ public class PlayerService {
             player.setHp(player.getMaxHp());
             player.setMaxMana(player.getMaxMana()+player.getProfession().getManaGrow());
             player.setMana(player.getMaxMana());
+
+
         }else {
             player.setExp(player.getExp()+enemy.getExp());
+            player.setMoney(player.getMoney()+enemy.getMoney());
         }
+
 
 
     }

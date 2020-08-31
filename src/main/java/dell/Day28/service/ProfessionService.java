@@ -32,22 +32,26 @@ public class ProfessionService {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            int a  = scanner.nextInt();
-            if (a == 1) {
-                profession = ProfessionData.professions[0];
-                System.out.println("您选择了"+profession.getProfessionName()+"职业");
-                break;
+            String a  = scanner.nextLine();
+            try {
+                int num = Integer.parseInt(a);
+                if (num == 1) {
+                    profession = ProfessionData.professions[0];
+                    System.out.println("您选择了"+profession.getProfessionName()+"职业");
+                    break;
+                }
+                else if (num == 2) {
+                    profession = ProfessionData.professions[1];
+                    System.out.println("您选择了"+profession.getProfessionName()+"职业");
+                    break;
+                }else{
+                    System.out.println("职业不存在,请重新选择职业：");
+                }
+            }catch (NumberFormatException e){
+                System.out.println("请重新输入数字进行选择");
             }
-            else if (a == 2) {
-                profession = ProfessionData.professions[1];
-                System.out.println("您选择了"+profession.getProfessionName()+"职业");
-                break;
-            }else{
-                System.out.println("请重新选择职业：");
-            }
+
         }
         return profession;
     }
-
-
 }

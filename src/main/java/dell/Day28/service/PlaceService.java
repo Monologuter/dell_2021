@@ -31,25 +31,31 @@ public class PlaceService {
         System.out.println("开心地玩吧：");
         Scanner scanner = new Scanner(System.in);
 
-        while (true) {
-            int c  = scanner.nextInt();
+        //数据校验
 
-            if (c == 1) {
-                place = PlaceData.places[0];
-                System.out.println("你进入了"+place.getPlaceName()+"\n"+place.getPlaceIntroduction());
-                break;
-            }
-            else if (c == 2) {
-                place = PlaceData.places[1];
-                System.out.println("你进入了"+place.getPlaceName()+"\n"+place.getPlaceIntroduction());
-                break;
-            }
-            else if (c == 3) {
-                place = PlaceData.places[2];
-                System.out.println("你进入了"+place.getPlaceName()+"\n"+place.getPlaceIntroduction());
-                break;
-            }else{
-                System.out.println("请重新选择场景：");
+        while (true) {
+            String c  = scanner.nextLine();
+            try {
+                int num = Integer.parseInt(c);
+                if (num == 1 ) {
+                    place = PlaceData.places[0];
+                    System.out.println("你进入了"+place.getPlaceName()+"\n"+place.getPlaceIntroduction());
+                    break;
+                }
+                else if (num == 2) {
+                    place = PlaceData.places[1];
+                    System.out.println("你进入了"+place.getPlaceName()+"\n"+place.getPlaceIntroduction());
+                    break;
+                }
+                else if (num == 3) {
+                    place = PlaceData.places[2];
+                    System.out.println("你进入了"+place.getPlaceName()+"\n"+place.getPlaceIntroduction());
+                    break;
+                }else{
+                    System.out.println("没有你需要选择的场景,请重新选择场景：");
+                }
+            }catch (java.lang.NumberFormatException e){
+                System.out.println("请重新输入数字进行选择！");
             }
         }
 
