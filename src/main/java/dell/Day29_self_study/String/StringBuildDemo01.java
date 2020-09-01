@@ -20,5 +20,6 @@ public class StringBuildDemo01 {
         System.out.println("stringBuilder:   " +stringBuilder);
         StringBuilder stringBuilder1 = new StringBuilder("abc");
         System.out.println("stringBuilder1:    " +stringBuilder1);
+        System.out.println("jjjjjjjjj");
     }
 }
