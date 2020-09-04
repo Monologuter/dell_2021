@@ -28,10 +28,19 @@ public class Person  extends  Object{
         System.out.println(person1);
 
 
-        String s = new String("金合欢花");
-        System.out.println(s.hashCode());
+        String s = new String("哈哈哈");
+        String s1 = new String("哈哈哈");
+        System.out.println("s的哈希值为："+s.hashCode());
+        System.out.println("s1的哈希值为："+s1.hashCode());
 
+        System.out.println(s1.hashCode() == s.hashCode());  //true
+        System.out.println(s1 == s);  //false
+        System.out.println(s1.equals(s)); // true
 
+        /*
+        * String重写了hashcode()方法，String类型的hash值是根据字符串的内容来决定的
+        * 并不是内存地址，只要两个String类型的字符串内容一致，那么两者的hashcode就相同
+        * */
 
 
 
