@@ -1,10 +1,9 @@
 package MyselfTest.Test_0827;
 
-import javafx.scene.control.RadioMenuItem;
+
 
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.Scanner;
 
 /**
  * @Author 马小姐
