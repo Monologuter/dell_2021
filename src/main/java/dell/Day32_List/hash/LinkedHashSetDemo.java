@@ -34,8 +34,6 @@ public class LinkedHashSetDemo {
         set1.add("abc");
         set1.add("baidu.com");
 
-
-
         System.out.println(set1);
         //有序但不能重复
 
