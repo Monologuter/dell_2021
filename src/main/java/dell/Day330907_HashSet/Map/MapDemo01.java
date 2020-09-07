@@ -1,7 +1,9 @@
 package dell.Day330907_HashSet.Map;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * @Author 马小姐
@@ -56,7 +58,8 @@ import java.util.Map;
                   返回此映射中包含的值的 Collection 视图。
 
     *
-    *
+    *注意事项：
+    *   Map集合无法直接遍历  只能通过键找值的方式进行遍历
     *
     *
     * */
@@ -69,5 +72,24 @@ public class MapDemo01 {
         map.put(8,"赵六");
         map.put(0,"田七");
         System.out.println(map);
+
+        //增强for循环
+        for (Integer i: map.keySet()) {
+            String value2 = map.get(i);
+            System.out.println();
+
+            System.out.println(i+":"+value2);
+        }
+
+        System.out.println("============================================");
+
+        //迭代器
+        Set<Integer> set = map.keySet();
+        Iterator<Integer> it =  set.iterator();
+        while (it.hasNext()){
+            Integer key = it.next();
+            String value = map.get(key);
+            System.out.println(key+":"+value);
+        }
     }
 }
