@@ -1,31 +1,24 @@
-package dell.Day330907_HashSet.Map;
+package dell.Day33_0907_HashSet.Map;
 
 import java.util.Objects;
 
 /**
  * @Author 马小姐
- * @Date 2020-09-07 17:22
+ * @Date 2020-09-07 11:41
  * @Version 1.0
  * @Description:
  */
-public class Person {
+public class Student {
     private  int age;
     private  String name;
 
-    public Person() {
-    }
 
-    public Person(int age, String name) {
+    public Student(int age, String name) {
         this.age = age;
         this.name = name;
     }
 
-    @Override
-    public String toString() {
-        return "Person{" +
-                "age=" + age +
-                ", name='" + name + '\'' +
-                '}';
+    public Student() {
     }
 
     public int getAge() {
@@ -44,14 +37,21 @@ public class Person {
         this.name = name;
     }
 
+    @Override
+    public String toString() {
+        return "Student{" +
+                "age=" + age +
+                ", name='" + name + '\'' +
+                '}';
+    }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Person person = (Person) o;
-        return age == person.age &&
-                Objects.equals(name, person.name);
+        Student student = (Student) o;
+        return age == student.age &&
+                Objects.equals(name, student.name);
     }
 
     @Override

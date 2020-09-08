@@ -1,4 +1,4 @@
-package dell.Day330907_HashSet.Collection;
+package dell.Day33_0907_HashSet.Collection;
 
 import java.util.Objects;
 
