@@ -469,7 +469,78 @@ if   while  for   (do while )  (if else)
     星期二上午继续看黑马程序员 date  dateFormat类（对日期进行格式化）  今天任务完成String类的学习 
     
                                                                                                 
-        
+
+### 第六周
+    `由Collection接口派生的两个接口是List和Set，都可以使用迭代器来遍历，它们都实现了Iterator接口
+     一.List 实现List接口的常用类有LinkedList，ArrayList，Vector和Stack,List允许有相同的元素。
+     
+     ArrayList
+     基于数组方式实现，无容量的限制。
+     在执行插入元素时可能要扩容，在删除元素时并不会减少数组的容量。
+     非线程安全。
+     LinkedList
+     基于双向链表机制实现。
+     元素的插入、移动较快。
+     非线程安全。
+     Vector
+     基于Object数组的方式来实现的。
+     基于synchronized实现的线程安全的ArrayList。
+     在插入元素时容量扩充的机制和ArrayList稍有不同：
+     Stack
+     基于Vector实现，支持LIFO。
+     二．set
+     Set是一种不包含重复的元素的Collection，即任意的两个元素e1和e2都有e1.equals(e2)=false，Set最多有一个null元素。
+     TreeSet
+     基于TreeMap实现，支持排序。
+     
+     非线程安全。
+     红黑树，可以实现元素的自然排序和定制排序
+     HashSet
+     
+     基于HashMap实现，无容量限制。
+     
+     不允许元素重复。
+     
+     非线程安全
+     hashSet不存入相同的元素是因为，重写了hashCode()和equals()
+     MAP
+     Map没有继承Collection接口，Map提供key到value的映射。一个Map中不能包含相同的key，每个key只能映射一个value。Map接口提供3种集合的视图Map的内容可以被当作一组key集合，一组value集合，或者一组key-value映射。
+     
+     HashMap类
+     HashMap和Hashtable类似，不同之处在于HashMap是非同步的，并且允许null，即null value和null key。
+     TreeMap
+     
+     基于红黑树实现，无容量限制。
+     
+     非线程安全。
+     treeSet底层是用TreeMap实现的
+     
+     面试题
+     1.HashMap与HashTable的区别？
+     答：
+     
+     HashMap没有考虑同步，是线程不安全的；Hashtable使用了synchronized关键字，是线程安全的；
+     HashMap允许K/V都为null；hashtable后者K/V都不允许为null；
+     HashMap继承自AbstractMap类；而Hashtable继承自Dictionary类；
+     如何决定选用HashMap还是TreeMap？
+     对于在Map中插入、删除和定位元素这类操作，HashMap是最好的选择。然而，假如你需要对一个有序的key集合进行遍历，TreeMap是更好的选择。基于你的collection的大小，也许向HashMap中添加元素会更快，将map换为TreeMap进行有序key的遍历。
+     3.ArrayList和Vector有何异同点？
+     ArrayList和Vector在很多时候都很类似。
+     （1）两者都是基于索引的，内部由一个数组支持。
+     （2）两者维护插入的顺序，我们可以根据插入顺序来获取元素。
+     （3）ArrayList和Vector的迭代器实现都是fail-fast的。
+     （4）ArrayList和Vector两者允许null值，也可以使用索引值对元素进行随机访问。
+     以下是ArrayList和Vector的不同点。
+     （1）Vector是同步的，而ArrayList不是。然而，如果你寻求在迭代的时候对列表进行改变，你应该使用CopyOnWriteArrayList。
+     （2）ArrayList比Vector快，它因为有同步，不会过载。
+     （3）ArrayList更加通用，因为我们可以使用Collections工具类轻易地获取同步列表和只读列表
+     4.ArrayList和LinkedList有何区别？
+     ArrayList和LinkedList两者都实现了List接口，但是它们之间有些不同。
+     （1）ArrayList是由Array所支持的基于一个索引的数据结构，所以它提供对元素的随机访问，复杂度为O(1)，但LinkedList存储一系列的节点数据，每个节点都与前一个和下一个节点相连接。所以，尽管有使用索引获取元素的方法，内部实现是从起始点开始遍历，遍历到索引的节点然后返回元素，时间复杂度为O(n)，比ArrayList要慢。
+     （2）与ArrayList相比，在LinkedList中插入、添加和删除一个元素会更快，因为在一个元素被插入到中间的时候，不会涉及改变数组的大小，或更新索引。
+     （3）LinkedList比ArrayList消耗更多的内存，因为LinkedList中的每个节点存储了前后节点的引用。
+     • Linkedlist是底层:双向链表
+     在ArrayList中增加或者删除某个元素，通常会调用System.arraycopy方法，这是一种极为消耗资源的操作，因此，在频繁的插入或者是删除元素的情况下，LinkedList的性能会更加好一点。`
             
             
         
