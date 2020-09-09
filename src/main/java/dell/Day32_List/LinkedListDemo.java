@@ -39,7 +39,7 @@ public class LinkedListDemo {
 
     private static void show01() {
 //        创建LinkedList对象
-        LinkedList<String> linked1 = new LinkedList<String> ();
+        LinkedList<String> linked1 = new LinkedList<> ();
         linked1.add("ccc");
         linked1.add("aaa");
         linked1.add("bbb");
