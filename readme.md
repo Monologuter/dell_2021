@@ -541,6 +541,18 @@ if   while  for   (do while )  (if else)
      （3）LinkedList比ArrayList消耗更多的内存，因为LinkedList中的每个节点存储了前后节点的引用。
      • Linkedlist是底层:双向链表
      在ArrayList中增加或者删除某个元素，通常会调用System.arraycopy方法，这是一种极为消耗资源的操作，因此，在频繁的插入或者是删除元素的情况下，LinkedList的性能会更加好一点。`
+    
+    
+    线程：
+        线程的概述：
+        创建线程的几种方式： 继承Thread类创建线程   实现Runable接口  使用Callable和Future创建线程    
+        思考三种方式创建线程的区别是什么？
+        1  通过继承Thread实现多线程是有弊端的  因为java只支持单继承 一个类一旦继承了某个类就无法再次继承Thread类了  比如一个Student继承了Person类 就无法再继承
+            Thread类创建多线程
+         。。。。。。。。。。。。。
+         
+     
+     
             
             
         
