@@ -564,7 +564,7 @@ if   while  for   (do while )  (if else)
         
         
         线程的状态描述：
-        ![Image text](src/screenshots/ThreadState.png)
+        ![image] (https://github.com/Monologuter/dell_2021/blob/master/src/screenshots/ThreadState.png)
            
      
      
