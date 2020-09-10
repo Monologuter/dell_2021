@@ -33,7 +33,7 @@ public class demo01 {
                 while (true){
                     //保证等待和唤醒只有一个在执行  所以需要使用同步技术
                     synchronized (obj){
-                        System.out.println("告诉老板需要的包子的种类和数量");
+                        System.out.println("顾客1告诉老板需要的包子的种类和数量");
                         try {
                             obj.wait(5000);
 
@@ -41,7 +41,60 @@ public class demo01 {
                             e.printStackTrace();
                         }
                         //唤醒之后执行的代码
-                        System.out.println("包子已经做好了可以开吃了");
+                        System.out.println("包子已经做好了,顾客1可以开吃了");
+                        System.out.println("=======================================================================");
+                    }
+                }
+            }
+        }.start();
+
+
+
+
+
+        new  Thread(){
+            @Override
+            public void run() {
+                //一直等着买包子
+                while (true){
+                    //保证等待和唤醒只有一个在执行  所以需要使用同步技术
+                    synchronized (obj){
+                        System.out.println("顾客2告诉老板需要的包子的种类和数量");
+                        try {
+                            obj.wait(5000);
+
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        //唤醒之后执行的代码
+                        System.out.println("包子已经做好了，顾客2可以开吃了");
+                        System.out.println("=======================================================================");
+                    }
+                }
+            }
+        }.start();
+
+
+
+
+        //创建一个老板的线程
+        new Thread() {
+            @Override
+            public void run() {
+                //死循环一直卖包子
+                while (true) {
+                    //花了五秒钟做包子 就代表睡眠五秒
+                    try {
+                        Thread.sleep(5000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    synchronized (obj) {
+
+                        System.out.println("老板五秒中之后做好包子 告知顾客可以开始吃包子了");
+                        //做好包子之后 调用notify方法唤醒顾客吃包子
+//                        obj.notify();   //如果有多个等待的线程  随机唤醒
+                        obj.notifyAll();  //唤醒所有的线程
                     }
                 }
             }
