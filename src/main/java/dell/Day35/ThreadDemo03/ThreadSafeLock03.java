@@ -72,7 +72,9 @@ public class ThreadSafeLock03 implements  Runnable{
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }finally {
+                   // 3、在可能出现线程安全问题后调用Lock接口中的方法unlock释放锁
                     lockTicket.unlock();
+                    //将第三步放在finally里面的好处是不管是否程序出现异常都会释放锁  提高程序的效率
                 }
             }
 //            lockTicket.unlock();
