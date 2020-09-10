@@ -561,6 +561,11 @@ if   while  for   (do while )  (if else)
             
             
         考虑:为什么会出现线程不安全  
+        
+        
+        线程的状态描述：
+        ![Image text](src/screenshots/ThreadState.png)
+           
      
      
             
