@@ -23,6 +23,8 @@ package dell.Day37_ThreadPool.demo02;
  *      {} 重写接口抽象方法的方法体
  *
  */
+
+//测试
 public class LambdaDemo {
     public static void main(String[] args) {
 
