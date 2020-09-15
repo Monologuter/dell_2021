@@ -2,6 +2,7 @@ package dell.Day39_0914.lambda;
 
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.Iterator;
 
 /**
  * @Author 马小姐
@@ -19,24 +20,32 @@ public class DemoArrays {
         array[3] = new Person(14,"陈诺");
 
 
-        //常规方式比较器
-        Arrays.sort(array,new Comparator<Person>() {
 
-            @Override
-            public int compare(Person o1, Person o2) {
+        //使用常规的方式进行排序
+//        Arrays.sort(array,new Comparator<Person> () {
+//
+//            @Override
+//            public int compare(Person o1, Person o2) {
+//                return  o1.getAge() - o2.getAge();
+//            }
+//        });
+//
+//        for (Person person: array) {
+//            System.out.println(person);
+//
+//        }
 
-                return o1.getAge() - o2.getAge();
-            }
-        });
 
-        //使用lambda表达式
+
+        //使用lambda排序  简化匿名内部类
+
         Arrays.sort(array,(Person o1, Person o2)->{
-            return o1.getAge() - o2.getAge();
+            return  o1.getAge() - o2.getAge();
         });
 
 
-        for (int i = 0; i < array.length; i++){
-            System.out.println(array[i]);
+        for (Person person:array) {
+            System.out.println(person);
         }
 
     }
