@@ -9,16 +9,16 @@ package MyselfTest.Day0915;
 
 
 /*
-* java中数组是没bai有length()方法的，只有length属性，du数组array.length返回的是该数组的长度
-* 字符串String是有length()方法的，str.length()返回的是该字bai符串的长度。
-* ArrayList没有length()方法
-*
-*
+ * java中数组是没bai有length()方法的，只有length属性，du数组array.length返回的是该数组的长度
+ * 字符串String是有length()方法的，str.length()返回的是该字bai符串的长度。
+ * ArrayList没有length()方法
  *
-*
-*
-*
-* */
+ *
+ *
+ *
+ *
+ *
+ * */
 
 
 public class Test03 {
