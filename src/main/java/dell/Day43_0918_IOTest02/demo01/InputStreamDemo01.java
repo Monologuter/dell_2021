@@ -1,8 +1,7 @@
-package dell.Day0918_IOTest02.demo01;
+package dell.Day43_0918_IOTest02.demo01;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.Arrays;
 
 /**
  * @Author 马小姐
