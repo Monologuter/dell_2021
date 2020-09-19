@@ -1,4 +1,4 @@
-package dell.Day43_0918_IOTest02.Reader;
+package dell.Day43_0918_IOTest02.Writer;
 
 import java.io.FileWriter;
 import java.io.IOException;
