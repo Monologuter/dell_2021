@@ -1,6 +1,8 @@
 package dell.Day44_0920_FilerAppend;
 
 import javax.annotation.processing.Filer;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -14,7 +16,7 @@ public class demo02 {
     public static void main(String[] args) {
         FileWriter fw = null;
      try {
-         fw = new FileWriter("src/main/java/dell/Day41_0916/IO/c.txt",true);
+         fw = new FileWriter("src/main/java/dell/Day41_0916/IO/q.txt",true);
 
          for (int i = 0; i < 10;i++){
              fw.write("helloWorld"+i+"\r");
@@ -24,12 +26,14 @@ public class demo02 {
      }catch (IOException e){
          System.out.println(e);
      }finally {
-         try {
-             fw.close();
-         } catch (IOException e) {
-             e.printStackTrace();
-         }
+         if (fw != null) {
+             try {
+                 fw.close();
+             } catch (IOException e) {
+                 e.printStackTrace();
+             }
 
+         }
      }
     }
 }
