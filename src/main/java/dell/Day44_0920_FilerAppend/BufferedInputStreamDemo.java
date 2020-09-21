@@ -62,12 +62,6 @@ public class BufferedInputStreamDemo {
         }
 
 
-
-
-
-
-
-
         //4、释放资源   先调用flush方法  后调用close方法  所以第四步可以省略
         bis.close();
         fis.close();
