@@ -45,6 +45,13 @@ import java.util.Map;
  *
  *
  *
+ *                  静态关键字：static
+ *                      优先于非静态加载到内存中 被static修饰的成员变量是不能被序列化的  因为序列化的都是对象
+ *                  瞬态关键字：transient  如果不想要成员变量被序列化就可以使用transient修饰
+ *                  eg：  private  transient int age;
+ *
+ *
+ *
  */
 public class ObjectInputStreamDemo {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
