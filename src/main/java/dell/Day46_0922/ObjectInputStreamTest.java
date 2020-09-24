@@ -19,7 +19,7 @@ import java.util.ArrayList;
  *                  3、创建一个ObjectOutputStream对象
  *                  4、使用ObjectOutputStream对象中的writeObject方法对集合进行序列化
  *                  5、创建一个ObjectInputStream反序列化对象
- *                  6、使用ObjectInputStream对象中的readObject方法读取文件中集合
+ *                  6、使用ObjectInputStream对象中的readObject方法读 取文件中集合
  *                  7、将文件中的Object类型转化为ArrayList类型
  *                  8、遍历集合
  *                  9、释放资源
